@@ -1,0 +1,14 @@
+server:
+  port: 3013
+eureka:
+  client:
+    serviceUrl:
+      register-with-eureka: true
+      fetch-registry: true
+      defaultZone: http://localhost:3000/eureka/
+spring:
+  application:
+    name: config-eureka-server
+userinfo:
+  username: user
+  password: password
