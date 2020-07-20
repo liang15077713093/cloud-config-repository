@@ -1,0 +1,43 @@
+server:
+  port: 8761
+
+spring:
+  security:
+    user:
+      name: admin
+      password: password
+#      password: ${CONFIG_SERVICE_PASSWORD:password}
+  cloud:
+    inetutils:
+      ignoredInterfaces:
+      - docker0
+      - veth.*
+      - VM.*
+
+eureka:
+  server:
+    enable-self-preservation: false
+    leaseRenewalIntervalInSeconds: 10
+    #renewal-percent-threshold: 0.85
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ip-address}:${spring.application.name}:${server.port}
+    metadata-map:
+      user.name: ${spring.security.user.name}
+      user.password: ${spring.security.user.password}
+  client:
+    registerWithEureka: true
+    fetchRegistry: false
+    server:
+      waitTimeInMsWhenSyncEmpty: 0
+    serviceUrl:
+      defaultZone: http://admin:password@10.20.1.62:8761/eureka
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS
