@@ -1,5 +1,5 @@
 server:
-  port: 8761
+  port: 8762
 
 spring:
   security:
@@ -31,7 +31,7 @@ eureka:
     server:
       waitTimeInMsWhenSyncEmpty: 0
     serviceUrl:
-      defaultZone: http://admin:password@localhost:8761/eureka
+      defaultZone: http://admin:password@localhost:8762/eureka
 
 management:
   endpoints:
