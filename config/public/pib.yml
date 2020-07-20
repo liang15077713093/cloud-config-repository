@@ -27,7 +27,7 @@ eureka:
       user.password: ${spring.security.user.password}
   client:
     registerWithEureka: true
-    fetchRegistry: false
+    fetchRegistry: true
     server:
       waitTimeInMsWhenSyncEmpty: 0
     serviceUrl:
