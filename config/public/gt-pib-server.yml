@@ -31,7 +31,7 @@ eureka:
     server:
       waitTimeInMsWhenSyncEmpty: 0
     serviceUrl:
-      defaultZone: http://admin:password@localhost:8762/eureka
+      defaultZone: http://admin:password@localhost:8761/eureka
 
 management:
   endpoints:
